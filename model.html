@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Model · WebMCP Agent</title>
+  <link rel="stylesheet" href="model.css">
+  <script src="model.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Model</h1>
+    <form autocomplete="off">
+      <label>Provider<select id="provider" required>
+        <option value="">Select a provider</option><option value="ollama">Ollama</option>
+        <option value="openai">OpenAI</option><option value="anthropic">Anthropic</option>
+        <option value="google">Google Gemini</option><option value="bedrock">Amazon Bedrock</option>
+      </select></label>
+      <label hidden>Endpoint (optional)<input id="endpoint" type="url" placeholder="http://127.0.0.1:11434" spellcheck="false"></label>
+      <div id="credentials" hidden>
+        <label id="key-field">API key<input id="key" type="password" autocomplete="off" autocapitalize="none" spellcheck="false"></label>
+        <div id="stored" hidden>Key saved <button type="button" id="replace">Replace</button> <button type="button" id="remove">Remove</button></div>
+      </div>
+      <label hidden>Region<input id="region" autocapitalize="none" spellcheck="false"></label>
+      <label hidden>Model ID<input id="model-id" autocapitalize="none" spellcheck="false"></label>
+      <label hidden>Model<select id="model"></select></label>
+      <p id="status" role="status"></p>
+      <button id="save" disabled>Save</button>
+    </form>
+  </main>
+</body>
+</html>

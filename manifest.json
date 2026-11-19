@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "WebMCP Agent",
+  "author": "Nart Madi",
+  "description": "Experimental Safari sidebar for using the current site’s WebMCP tools with a local or hosted AI model.",
+  "version": "0.2.0",
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; base-uri 'none'"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://127.0.0.1:11434/*",
+    "http://localhost:11434/*"
+  ],
+  "action": {
+    "default_title": "Toggle WebMCP Agent sidebar"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
